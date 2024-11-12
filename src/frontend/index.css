@@ -80,14 +80,15 @@
 
         .tab_btn_border{
             position:absolute;
-            top:5%;
+            top:1%;
             width:20%;
             height:90%;
-            border:'2px solid rgb(242, 60, 5)';
+            border:'3px solid rgb(242, 60, 5)';
+            border-bottom-width: 1px;
             background-color: transparent;
         }
         
-        #tab_btn1_border{left: 0%;}
+        #tab_btn1_border{left: -0.75%;}
         #tab_btn2_border{left:20%;}
         #tab_btn3_border{left:40%;}
         #tab_btn4_border{left:60%;}
