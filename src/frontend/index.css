@@ -1,0 +1,142 @@
+        html{
+            background-color: rgb(242, 60, 5);
+        }
+        
+        html, body {
+            margin: 0; 
+            height: 100%; 
+            overflow: hidden
+        }
+        
+        #background_top_black{
+            background-color:rgb(18,18,16);
+            position:absolute;
+            height:40%;
+            width:60%;
+            left:40%;
+            top:0%;
+        }
+    
+        #background_bottom_black{
+            background-color:rgb(18, 18, 16);
+            position:absolute;
+            height:40%;
+            width:40%;
+            top:60%;
+            left:0%;
+        }    
+        
+        #main_box{
+            background-color:black;
+            position: absolute;
+            height: 90%;
+            width: 90%;
+            left: 5%;
+            top:10%;
+        }
+        
+        #hello_box{
+            background-color:black;
+            position:absolute;
+            height:25%;
+            width:35%;
+            left:5%;
+            top:10%;
+            color: white;
+            font-weight: 700;
+            //font-size: 22px;
+            font-size: 1vw;
+            font-family: "Nunito", sans-serif;
+        }
+   
+        #tab_btn_field{
+            position:absolute;
+            top:0%;
+            left:28.9%;
+            width:50%;
+            height:6.25%;
+            background-color:black;
+        }
+   
+        .tab_btn{
+            position:absolute;
+            top:0%;
+            //font-size:14px;
+            font-size: 0.8vw;
+            font-weight:600;
+            font-family: "Nunito", sans-serif;
+            color:white;
+            background-color:black;
+            width:20%;
+            height:100%;
+            text-align: center;
+        }
+        
+        #tab_btn1{left: 0%; background-color: rgb(242, 60, 5); }
+        #tab_btn2{left:20%;}
+        #tab_btn3{left:40%;}
+        #tab_btn4{left:60%;}
+        #tab_btn5{left:80%;}
+
+        .tab_btn_border{
+            position:absolute;
+            top:5%;
+            width:20%;
+            height:90%;
+            border:'2px solid rgb(242, 60, 5)';
+            background-color: transparent;
+        }
+        
+        #tab_btn1_border{left: 0%;}
+        #tab_btn2_border{left:20%;}
+        #tab_btn3_border{left:40%;}
+        #tab_btn4_border{left:60%;}
+        #tab_btn5_border{left:80%;}
+        
+        #my_intro_border{
+            position:absolute;
+            top:44.5%;
+            left:3.5%;
+            height:50%;
+            width:24%;
+            border: 0.125vw solid rgb(242, 60, 5); 
+            border-radius: 1vw;
+            -moz-border-radius: 1vw;
+            -webkit-border-radius: 1vw;   
+            background-color:rgb(18,18,16);
+        }
+    
+        #my_intro{
+            position:absolute;
+            top:46.5%;
+            left:5%;
+            height:67%;
+            width:35%; 
+        }
+        
+        #my_intro_title{
+            position:absolute;
+            top:0%;
+            left:0%;
+            height:10%;
+            width:90%;
+            font-family: "Nunito", sans-serif;
+            //font-size:20px;
+            font-size: 1vw;
+            color:white;
+            font-weight:700;
+            //border:3px dashed white;
+        }
+        
+        #my_intro_text{
+            position:absolute;
+            top:10%;
+            left:0%;
+            height:85%;
+            width:100%;
+            font-family: "Nunito", sans-serif;
+           // font-size:15px;
+            font-size: 0.8vw;
+            color:white;
+            font-weight:600;        
+        }
