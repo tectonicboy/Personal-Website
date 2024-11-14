@@ -5,7 +5,7 @@
         html, body {
             margin: 0; 
             height: 100%; 
-            overflow: hidden
+            overflow: hidden;
         }
         
         #background_top_black{
@@ -44,11 +44,24 @@
             top:10%;
             color: white;
             font-weight: 700;
-            //font-size: 22px;
             font-size: 1vw;
             font-family: "Nunito", sans-serif;
         }
-   
+
+        #Text_Work_Experience{
+            background-color:black;
+            position:absolute;
+            height:80%;
+            width:80%;
+            left:5%;
+            top:10%;
+            color:white;
+            font-weight:600;
+            font-family: "Nunito", sans-serif;
+            /*border: 3px dashed orange;*/
+            display:none;
+        }
+
         #tab_btn_field{
             position:absolute;
             top:0%;
@@ -122,11 +135,9 @@
             height:10%;
             width:90%;
             font-family: "Nunito", sans-serif;
-            //font-size:20px;
             font-size: 1vw;
             color:white;
             font-weight:700;
-            //border:3px dashed white;
         }
         
         #my_intro_text{
@@ -136,7 +147,6 @@
             height:85%;
             width:100%;
             font-family: "Nunito", sans-serif;
-           // font-size:15px;
             font-size: 0.8vw;
             color:white;
             font-weight:600;        

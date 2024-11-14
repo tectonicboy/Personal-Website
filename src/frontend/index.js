@@ -44,24 +44,21 @@ function Global_State_Hide_Content(current_button){
     
     switch(current_button){
         case '1':{
-        
-            console.log("Entered switch CASE for 1!");
-        
+   
             /* Number of content items shown for having clicked button_1. */
-            count_IDs = 4;
+            count_IDs = 3;
         
             /* Content that was shown due to button_1 having been clicked. */
             array_IDs.push( 'hello_box' 
                            ,'my_intro'
                            ,'my_intro_border'
-                           ,'site_intro'
                           );                                       
             break;
         }
         
         case '2':{
-        
-        
+            count_IDs = 1;
+            array_IDs.push('Text_Work_Experience');
             break;
         }
         
@@ -87,8 +84,6 @@ function Global_State_Hide_Content(current_button){
     /* Hide them before the newely pressed button's event listener for
      * ON CLICKED can now display its own relevant site content.
      */
-    console.log("Exited switch. For-loop iterating over " + count_IDs + " IDs");
-    
     for(let i = 0; i < count_IDs; ++i){
         (document.getElementById(array_IDs[i])).style.display = 'none';
     }   
@@ -166,8 +161,8 @@ tab_button1_border.addEventListener('click', () => {
     let prev_btn_border = document.getElementById(curr_btn_border_name_string);
     
     /* Helper locals for showing this button's necessary content elements. */
-    let array_IDs = ['hello_box', 'my_intro', 'my_intro_border', 'site_intro'];
-    let count_IDs = 4;
+    let array_IDs = ['hello_box', 'my_intro', 'my_intro_border'];
+    let count_IDs = 3;
     
     /* Put the button we were on until now to an UNCLICKED state. */    
     prev_btn.style.backgroundColor = 'black';
@@ -242,7 +237,9 @@ tab_button2_border.addEventListener('click', () => {
     Global_State_Hide_Content(current_button);
 
     /* TODO: Add code for showing the content of this button!! */
-
+    
+    (document.getElementById('Text_Work_Experience')).style.display = 'block';
+    
     /* Maintain the global state of which button is currently clicked to 
      * make it more elegant for every button's ON CLICK event listener function 
      * to keep track of which button was clicked until then and thus more easily

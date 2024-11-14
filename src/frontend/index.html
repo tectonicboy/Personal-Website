@@ -24,7 +24,6 @@
         </div>
         
         <div id="tab_btn_field">
-            <!-- Black normally, orange when user goes to that button's tab. -->
             <div class="tab_btn" id="tab_btn1"><br>Home</div>
             <div class="tab_btn" id="tab_btn2"><br>Work Experience</div>
             <div class="tab_btn" id="tab_btn3"><br>Hobby Projects</div>
@@ -47,7 +46,7 @@
             <div id="my_intro_text">
                 
                 I am Kevin Stefanov, a software engineer by<br>
-                profession with a main interest in low-level<br>
+                profession, experienced primarily in low-level<br>
                 systems development. I very much enjoy<br>
                 learning the intricacies of how the underlying<br>
                 hardware architecture of a modern computer<br>
@@ -63,9 +62,80 @@
             </div>
         </div>
         
-        <div id="site_intro">
+        <div id="Text_Work_Experience">
+        
+            <span style="font-size: 1vw;color:rgb(240, 166, 38);">
+                Job 1 - Xen Hypervisor Developer at Citrix R&D [10 months] <br>
+                <br>
+            </span>
+            
+            <span style="font-size: 0.8vw;">
+                This was my first job after university. In this role, I was
+                developing Xen Hypervisor, which is a bare-metal virtualization engine that<br>
+                implements virtualized hardware devices and brings up and runs
+                virtualized operating systems. I was learning and working primarily<br>
+                with C and x86 assembly language and learning about hardware
+                architecture and how it affects modern operating systems design.<br>  
+                I left because I got tired of living in England and wanted to move
+                back to my home country of Bulgaria, where I've been much happier.
+                <br><br><br>
+            </span>
+            
+            <span style="font-size: 1vw;color:rgb(240, 166, 38);">
+                Job 2 - Developer of Operating Systems at IBM [2 years and 7 months]
+                <br><br>
+            </span>
+            
+            <span style="font-size: 0.8vw;">
+                In this role I was developing the flagship operating system for
+                IBM System Z machines - z/OS. I used daily a mixture of system-level<br>
+                languages: C, assembly language, and PL/X - IBM's internal
+                low-level language for OS development. A good portion of my time<br>
+                was spent reading compiler-generated assembly language code to
+                debug a frozen running instace of the operating system. I also<br>
+                trained other IBM developers who weren't coming from a low-level
+                programming background. I left because of poor management<br>
+                and compensation not growing as competitively as an OS developer 
+                using assembly language almost daily should be getting.<br><br><br>
+            </span>
+            
+            <span style="font-size: 1vw;color:rgb(240, 166, 38);">
+                Job 3 - Developer of highly optimized low-level systems at Ravendao [starting January 2025]
+                <br><br>
+            </span>
+            
+            <span style="font-size: 0.8vw;">
+                
+                My main responsibility here is to develop advanced software optimizations
+                to Raven's high frequency algorithmic trading system.<br><br>
+                
+                My first project is to implement a low-level OS kernel bypass for UDP
+                networking. The Linux Kernel handles this entirely for us right now,<br>
+                as it does in every usual system. The kernel bypass system will instead
+                be reading UDP packets directly from the hardware network card <br>
+                and sending them directly to it via a userspace network card driver and 
+                parsing/constructing UDP packets using a custom implementation<br>
+                of the IP and UDP protocols, completely replacing the Linux Kernel's implementation
+                of these protocols, bypassing it entirely to boost speed.<br><br>
+
+                This is an advanced optimization to the HFT system. It eliminates
+                costly context switches between user space and kernel space, avoids<br>
+                the usage of needlessly huge and bloated over time in-kernel data structures
+                for general network handling and allows for specialized<br>
+                optimizations geared toward the architecture of the specific CPU
+                the system is running on, like custom cache-aware memory allocation.<br>
+            </span>
+            
+        
         </div>
         
+        
+        
+        
+        
+        
+        
+         
     </div>
     
     <script src="index.js"></script>
