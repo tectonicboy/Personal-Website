@@ -131,7 +131,7 @@
         <div id="Text_Hobby_Projects">
 
             <span style="font-size: 1vw;color:rgb(240, 166, 38);">
-                This website <br><br>
+                This website <br>
             </span>
 
             <span style="font-size: 0.8vw;">
@@ -144,118 +144,113 @@
             </span>
 
             <span style="font-size: 1vw;color:rgb(240, 166, 38);">
-                My first few projects <br><br>
+                My first few projects <br>
             </span>
         
             <span style="font-size: 0.8vw;">
                 
-                For my first few projects I wrote a 
-                <span style="color:rgb(239, 245, 66);"> relational database engine from scratch</span>
-                in C++, including coming up with my own custom query language and implementing<br>
-                it in about a thousand lines of C++, building a desktop GUI for the database
-                using wxWidgets and using AF_UNIX sockets on Linux to connect it to other processes<br>
-                that may need to automatically use the database engine, such as
-                <span style="color:rgb(239, 245, 66);"> a TCP web server in C</span><br>
-                I developed for a small file storage website I was writing. Its web server was
-                connecting to my custom database engine and sending it via the AF_UNIX socket<br>
-                commands written in my custom query language, and my database system accepting
-                accepting them, parsing them and retrieving / storing / delete data from the<br> 
-                website's database accordingly. It was big fun to see all these different moving
-                parts I had developed work together - the website's frontend in HTML/CSS/JavaScript,<br>
-                its web server I had written in C with TCP sockets, and the C++ database engine the
-                files were stored on, that the website's user would upload and download from.<br><br> 
-                Another early small C project of mine was to develop
-                <span style="color:rgb(239, 245, 66);"> Tetris and Snake in C to run on a 
-                Linux terminal</span>. I had emulated their game screens, with varying framerates, using<br>
-                a simple C array of characters. A character string used to emulate a game screen!
-                It contained chunks of ASCII characters separated by the newline chars, and each<br>
-                chunk of characters was "a row of pixels" on the game screen inside the Linux terminal
-                window. The framerate was emulated by quickly updating the string representing the game<br>
-                screen and redrawing it with printf(). Canonical mode for the Linux terminal was disabled
-                to allow WASD controls without having to press Enter. A separate thread listened for<br>
-                keyboard input and moved the snake and tetris blocks according to what the player had
-                pressed. Scores were added when the snake's head had moved where the apple had randomly<br>
-                spawned or when an entire row of Tetris blocks was filled up. I implemented basic collision
-                detection so that the snake would die when hitting itself (not a wall - it would reappear<br>
-                on the other end of the game screen if it entered one of them) and so that a Tetris
-                block couldn't go beyond the walls of its game screen. All this in a few hundred lines of C.<br>
-                It was so much fun and taught me the basics of multithreading, a bit of the Linux C library
-                (for terminal control, etc), pointers and just general C programming. I loved doing it.<br><br>  
+                My first non-trivial project from a few years ago was to write a website in HTML, CSS and
+                Javascript with the slight detail that I also wrote its 
+                <span style="color:rgb(239, 245, 66);">HTTP web server by myself in C</span><br>
+                using Linux Sockets, as well as a minimal
+                <span style="color:rgb(239, 245, 66);"> relational database engine</span> that included 
+                me coming up with a<span style="color:rgb(239, 245, 66);"> custom query language </span>
+                for it and implementing it in C++. My website's<br>
+                HTTP server that I wrote in C was connecting to my custom database system with AF_UNIX sockets 
+                and sending it commands written in my custom query language.<br><br>
                 
-                </span> 
+                The other cool non-trivial project from a few years ago that I did was implementing 
+                <span style="color:rgb(239, 245, 66);">Tetris and Snake in C</span> 
+                to run on a Linux terminal. I had emulated the game screen with an array of ASCII<br>
+                characters, which contained sections separated by newlines, to draw a 2D game screen. I had
+                emulated the framerate by continuously rewriting the string with printf(). Player controls<br>
+                were implemented by disabling terminal canonical mode and having a separate thread listen
+                for keyboard input. Collision detection made sure the snake died any time it would hit its tail.<br><br>
                 
                 <span style="font-size: 1vw;color:rgb(240, 166, 38);">
-                    My current and by far biggest project <br><br>
+                    My current and by far biggest side project <br>
                 </span>
                 
                 <span style="font-size: 0.8vw;">
-            
-                    <!-- TODO: Add CSS and Javascript for this text, it will be similar to Work Experience text. -->
-                    <!--       Add <br>'s to Rosetta Client and Server description. Change all <br>'s to make
-                               the whole text fit on the page without needing to scroll. Rows will definitely
-                               need to be longer than Job Description by the looks of it.
-                    -->
-                
-                    For over a year I've been working on 
-                    <span style="color:rgb(239, 245, 66);">a system for encrypted & authenticated instant messaging</span> 
-                    that I've been writing primarily in C, providing modern security for text messaging in chat rooms.<br><br>
-
-                    It consists of 4 major parts I've developed:<br>
-                    &#9 An optimized function library for representing and doing math on gargantuan numbers.
-                        For it, I've implemented the basic arithmetic and bitwise operations, as well as some more<br>
-                        advanced number theory algorithms, including Rabin-Miller prime searching algorithm,
-                        Multiple Precision Division and Montgomery Modular Multiplication & Powering using compiler<br>
-                        intrinsics. It performs [ A to the power of B (mod M) ] where A and M are 3070-bit unsigned 
-                        integers and B is a 320-bit unsigned integer in just 0.005 seconds thanks to compiler intrinsics.<br>
-                        It supports big unsigned integers only and the whole library is about 1500 lines of C code.
-                            
-                    &#9 An optimized function library of my own implementations of cryptographic algorithms
-                        like Argon2, Blake2b, ChaCha20 and Schnorr Signature generator / verifier. I implemented<br>
-                        them from their RFCs. The most complicated of these by far to implement has been Argon2id.
-                        The library is about 2000 lines of C code.
-                          
-                    &#9 A TCP Client which runs on the user's machine. It transports the user's long-term public key to
-                        the TCP server in an encrypted and authenticated fashion (in order to do the rest of the 
-                        communication session also in a secure fashion) by means of a short-term Diffie-Hellman handshake
-                        which creates a very short lived shared secret, which is destroyed as soon as the long-term public
-                        key is transported to the server. a HMAC authenticator is used here. Then, a new Diffie-Hellman 
-                        session-length shared secret is established using the server's and client's long-term keys.
-                        To send a text a message to everyone else in their chatroom, a 3-layer deep key scheme is used.
-                        First, a one-time use 32-byte key K is randomly generated. This key is itself encrypted by the
-                        user sender, and decrypted by the receivers of the message via 32-byte session-length symmetric keys
-                        KAB and KBA, which are extracted from the session-length shared secret, which itself comes from
-                        the 1st layer keys - the server's and client's long-term 3070-bit public key and 320-bit private key.
-                        The un-encrypted version of one-time use key K is used to encrypt the actual payload in the packet
-                        which is to be kept encrypted while in transit. Finally, a Schnorr Signature is calculated on the
-                        whole packet payload, attached to the packet payload and sent to the TCP server to be routed to
-                        all the intended client receivers, guaranteed message integrity and security. On text message arrival,
-                        the receiver clients use their long-term public keys to validate the cryptographic signature attached
-                        to the payload, to be assured that the message indeed legitimately comes from the expected sender
-                        and that it was not modified in transit. The receiver clients then use their receiver session key from
-                        the pair (KBA,KAB), extracted from the shared secret originating from the long-term public/private keys,
-                        to decrypt the one-time use key K. Then, the decrypted version of key K is used to decrypt the actual
-                        protected part of the payload and the text message itself. The TCP client alerts the desktop GUI system
-                        to display the message to the user's screen. The GUI is written in C++ using the wxWidgets toolkit.
+                    For over a year I've been developing from scratch in C 
+                    <span style="color:rgb(239, 245, 66);">a system for secure instant messaging.</span>
+                    It's nearing 10,000 lines of mostly C code. For this, I've implemented 4 major things:
+                    <ul>
+                    
+                        <li>
+                            An optimized function library in C for representing and doing math on huge numbers 
+                            with thousands of digits. Here I've implemented some rather complex algorithms <br>
+                            such as multiple-precision division, Rabin-Miller prime number locator and 
+                            Montgomery Modular Multiplication. The library hasn't been optimized for minimal<br>
+                            cache misses yet and already computes (A<sup>B</sup> mod M) in 0.0053 seconds, where A and M 
+                            are 3070-bit and B is a 320-bit unsigned integer, on a Ryzen 9 desktop CPU.<br><br>
+                        </li>
                         
-                    &#9 A TCP Server which maintains its own internal state of all the current users of the texting system
-                        and all the chatrooms that have been created. It never initiates communication with the TCP clients,
-                        rather only conveys transmissions to them, from sender clients. The TCP server is unable to decrypt
-                        the users' text messages. The client machines send, a few times per second per client, polling requests 
-                        to the TCP server, which internally saves messages to be delivered to each client. It keeps track of
-                        dead connections via a third thread, which periodically locks (using mutexes) the necessary memory
-                        regions in order to see the last time every client polled the server, and if it was over X seconds ago,
-                        assumes a dead connection and removes the user's machine from the texting system. It does other things
-                        too of course. It will all be described in the documentation.
+                        <li>
+                            An optimized function library in C containing my own implementations of cryptography
+                            algorithms - Blake2b, ChaCha20, Argon2 and a generator/validator of Schnorr Signatures.<br><br>
+                        </li>
                         
-                
+                        <li>
+                            A TCP client in C that runs on the user's machine. The user's long-term keys are encrypted
+                            behind a (non-stored) password with Argon2. At login, their long-term keys are conveyed to the TCP<br>
+                            server via another, short-term pair of keys and Diffie Hellman shared secret. Then a
+                            session-wide Diffie Hellman shared secret is generated for the actual texting session to begin.<br>
+                            To send a text message to everyone else in their chatroom, a 3-layer deep key scheme is
+                            used: First, a random one-time use 32-byte key K is generated. That key is itself encrypted with ChaCha20<br>
+                            using symmetric session keys KAB/KBA obtained from the shared secret, which itself comes
+                            from the long-term 3070-bit / 320-bit public/private keys of both sides. The un-encrypted version <br>
+                            of one-time key K is used in ChaCha20 to encrypt the text message network packet payload that's to be 
+                            secured in transit. The receiver does the security scheme in reverse to obtain the text message.<br><br> 
+                        </li>
+                        
+                        <li>
+                            A TCP server in C that maintains all the connected clients and the chatrooms they are currently in,
+                            with its own cryptographic artifacts and shared secrets, which it only uses to communicate with<br>
+                            individual clients securely. A text message sent by a user cannot be decrypted by the TCP server,
+                            because clients use a different shared secret obtained with the other client's long-term public<br>
+                            and private keys. The TCP server never initiates a transmission, instead it either gets asked by
+                            a TCP client for something, like creating a new chatroom, or is polled several times a second by<br>
+                            ALL clients, in order to relay to them any pending transmissions like a text message sent by someone 
+                            else in the chatroom the clients are currently in. It can also detect dead client connections.
+                        </li>
+                    
+                    </ul>
+                    
+                    
                 </span>
                 
-                           
-        
         </div>
         
+        <div id="Text_My_Interests">
+            I'd be interested to work on pretty much anything that's big and complex and<br>
+            requires the careful and optimal use of low-level languages like C, C++, Rust<br>
+            and Assembly Language and/or where advanced software optimizations are required.<br><br>
+            
+            This means included in the list are compilers, operating systems, hypervisors,<br> 
+            game engines, high frequency trading systems, embedded systems, device drivers,<br>
+            browser engines, database engines, web servers, interpreters, firmware, network<br>
+            packet analyzers and injectors, malware analysis tools and other similar systems.<br><br>
+            
+            I'd also be interested in doing a PhD in compilers, hypervisors or embedded systems.<br><br>
+            
+            Please only contact me for <span style="color:rgb(239, 245, 66);"> remote roles</span>.
+            I don't mind an occasional travel or office visit.
+        </div>
         
-        
+        <div id="Text_Contact_Me">
+            I am currently based in east Europe - Bulgaria, where I was born.<br><br>
+            
+            I hold the legal right to live, study and work in the UK as well.<br><br>
+            
+            You may reach me by email: <span style="color:rgb(239, 245, 66);"> kevinstefanov15@gmail.com</span><br><br>
+            
+            You may also call me on: <span style="color:rgb(239, 245, 66);"> +359 (0) 877327172</span><br><br>
+            
+            Or add me on discord: <span style="color:rgb(239, 245, 66);"> hypervisor_</span><br><br>
+            
+            Here's my github too: <span style="color:rgb(239, 245, 66);">https://github.com/tectonicboy</span>
+        </div>      
         
         
          

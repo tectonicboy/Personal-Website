@@ -62,6 +62,49 @@
             display:none;
         }
 
+        #Text_Hobby_Projects{
+            background-color:black;
+            position:absolute;
+            height:80%;
+            width:90%;
+            left:5%;
+            top:7.5%;
+            color:white;
+            font-weight:600;
+            font-family: "Nunito", sans-serif;
+            /*border: 3px dashed orange;*/
+            display:none;
+        }
+        
+        #Text_My_Interests{
+            background-color:black;
+            position:absolute;
+            height:80%;
+            width:90%;
+            left:5%;
+            top:10%;
+            color:white;
+            font-weight:600;
+            font-family: "Nunito", sans-serif;
+            font-size: 0.8vw;
+            /*border: 3px dashed orange;*/
+            display:none;
+        }
+
+        #Text_Contact_Me{
+            background-color:black;
+            position:absolute;
+            height:80%;
+            width:90%;
+            left:5%;
+            top:10%;
+            color:white;
+            font-weight:600;
+            font-family: "Nunito", sans-serif;
+            font-size: 0.8vw;
+            /*border: 3px dashed orange;*/
+            display:none;
+        }        
         #tab_btn_field{
             position:absolute;
             top:0%;

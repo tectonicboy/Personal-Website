@@ -63,20 +63,20 @@ function Global_State_Hide_Content(current_button){
         }
         
         case '3':{
-            
-            
+            count_IDs = 1;
+            array_IDs.push('Text_Hobby_Projects');
             break;
         }
         
         case '4':{
-            
-            
+            count_IDs = 1;
+            array_IDs.push("Text_My_Interests");
             break;
         }
         
         case '5':{
-            
-            
+            count_IDs = 1;
+            array_IDs.push("Text_Contact_Me");
             break;
         }
     }
@@ -177,24 +177,6 @@ tab_button1_border.addEventListener('click', () => {
     
     tab_button1.style.backgroundColor = 'rgb(242, 60, 5)';
 
-
-    /* TODO Remember to hide the content of the previous button before updating
-     * the global clicked state!!
-     *
-     * Check the value of current_button and based on that, with a switch
-     * statement or something, hide the site content that had appeared after
-     * the button had been clicked. 
-     *
-     * Do this in a separate function so that ALL buttons' event listeners
-     * can call it, because you can click button_2 from all other buttons
-     * for example, so all other buttons' event listener functions need to pass
-     * to the Hide_Content() function the button number from the global state
-     * which is the variable current_button. Then the content hiding function
-     * can decide which content to hide, because now based on that it knows
-     * what content must be up on the screen, REGARDLESS of what button is
-     * clicked now.
-     *
-     */
     Global_State_Hide_Content(current_button);
 
     /* Show this button's necessary site content HTML elements. */
@@ -236,7 +218,6 @@ tab_button2_border.addEventListener('click', () => {
      */
     Global_State_Hide_Content(current_button);
 
-    /* TODO: Add code for showing the content of this button!! */
     
     (document.getElementById('Text_Work_Experience')).style.display = 'block';
     
@@ -276,8 +257,8 @@ tab_button3_border.addEventListener('click', () => {
      */
     Global_State_Hide_Content(current_button);
 
-    /* TODO: Add code for showing the content of this button!! */
 
+    (document.getElementById('Text_Hobby_Projects')).style.display = 'block';
     /* Maintain the global state of which button is currently clicked to 
      * make it more elegant for every button's ON CLICK event listener function 
      * to keep track of which button was clicked until then and thus more easily
@@ -314,8 +295,8 @@ tab_button4_border.addEventListener('click', () => {
      */
     Global_State_Hide_Content(current_button);
 
-    /* TODO: Add code for showing the content of this button!! */
-
+    (document.getElementById('Text_My_Interests')).style.display = 'block';
+    
     /* Maintain the global state of which button is currently clicked to 
      * make it more elegant for every button's ON CLICK event listener function 
      * to keep track of which button was clicked until then and thus more easily
@@ -352,8 +333,7 @@ tab_button5_border.addEventListener('click', () => {
      */
     Global_State_Hide_Content(current_button);
 
-    /* TODO: Add code for showing the content of this button!! */
-
+    (document.getElementById('Text_Contact_Me')).style.display = 'block';
     /* Maintain the global state of which button is currently clicked to 
      * make it more elegant for every button's ON CLICK event listener function 
      * to keep track of which button was clicked until then and thus more easily
