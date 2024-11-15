@@ -125,11 +125,134 @@
                 optimizations geared toward the architecture of the specific CPU
                 the system is running on, like custom cache-aware memory allocation.<br>
             </span>
-            
-        
+
         </div>
         
+        <div id="Text_Hobby_Projects">
+
+            <span style="font-size: 1vw;color:rgb(240, 166, 38);">
+                This website <br><br>
+            </span>
+
+            <span style="font-size: 0.8vw;">
+                This website is itself a project of mine, all be it a quick one and unlike the projects
+                I typically work on. I wrote the frontend part in plain HTML, CSS and Javascript.<br>
+                For the backend, I wrote an HTTP web server in C, to which the DNS servers send
+                requests to access my website. The C web server simply listens for connections,<br>
+                accepts legit ones and serves the necessary code and other files for the website
+                to be displayed on the user's web browser.<br><br>
+            </span>
+
+            <span style="font-size: 1vw;color:rgb(240, 166, 38);">
+                My first few projects <br><br>
+            </span>
         
+            <span style="font-size: 0.8vw;">
+                
+                For my first few projects I wrote a 
+                <span style="color:rgb(239, 245, 66);"> relational database engine from scratch</span>
+                in C++, including coming up with my own custom query language and implementing<br>
+                it in about a thousand lines of C++, building a desktop GUI for the database
+                using wxWidgets and using AF_UNIX sockets on Linux to connect it to other processes<br>
+                that may need to automatically use the database engine, such as
+                <span style="color:rgb(239, 245, 66);"> a TCP web server in C</span><br>
+                I developed for a small file storage website I was writing. Its web server was
+                connecting to my custom database engine and sending it via the AF_UNIX socket<br>
+                commands written in my custom query language, and my database system accepting
+                accepting them, parsing them and retrieving / storing / delete data from the<br> 
+                website's database accordingly. It was big fun to see all these different moving
+                parts I had developed work together - the website's frontend in HTML/CSS/JavaScript,<br>
+                its web server I had written in C with TCP sockets, and the C++ database engine the
+                files were stored on, that the website's user would upload and download from.<br><br> 
+                Another early small C project of mine was to develop
+                <span style="color:rgb(239, 245, 66);"> Tetris and Snake in C to run on a 
+                Linux terminal</span>. I had emulated their game screens, with varying framerates, using<br>
+                a simple C array of characters. A character string used to emulate a game screen!
+                It contained chunks of ASCII characters separated by the newline chars, and each<br>
+                chunk of characters was "a row of pixels" on the game screen inside the Linux terminal
+                window. The framerate was emulated by quickly updating the string representing the game<br>
+                screen and redrawing it with printf(). Canonical mode for the Linux terminal was disabled
+                to allow WASD controls without having to press Enter. A separate thread listened for<br>
+                keyboard input and moved the snake and tetris blocks according to what the player had
+                pressed. Scores were added when the snake's head had moved where the apple had randomly<br>
+                spawned or when an entire row of Tetris blocks was filled up. I implemented basic collision
+                detection so that the snake would die when hitting itself (not a wall - it would reappear<br>
+                on the other end of the game screen if it entered one of them) and so that a Tetris
+                block couldn't go beyond the walls of its game screen. All this in a few hundred lines of C.<br>
+                It was so much fun and taught me the basics of multithreading, a bit of the Linux C library
+                (for terminal control, etc), pointers and just general C programming. I loved doing it.<br><br>  
+                
+                </span> 
+                
+                <span style="font-size: 1vw;color:rgb(240, 166, 38);">
+                    My current and by far biggest project <br><br>
+                </span>
+                
+                <span style="font-size: 0.8vw;">
+            
+                    <!-- TODO: Add CSS and Javascript for this text, it will be similar to Work Experience text. -->
+                    <!--       Add <br>'s to Rosetta Client and Server description. Change all <br>'s to make
+                               the whole text fit on the page without needing to scroll. Rows will definitely
+                               need to be longer than Job Description by the looks of it.
+                    -->
+                
+                    For over a year I've been working on 
+                    <span style="color:rgb(239, 245, 66);">a system for encrypted & authenticated instant messaging</span> 
+                    that I've been writing primarily in C, providing modern security for text messaging in chat rooms.<br><br>
+
+                    It consists of 4 major parts I've developed:<br>
+                    &#9 An optimized function library for representing and doing math on gargantuan numbers.
+                        For it, I've implemented the basic arithmetic and bitwise operations, as well as some more<br>
+                        advanced number theory algorithms, including Rabin-Miller prime searching algorithm,
+                        Multiple Precision Division and Montgomery Modular Multiplication & Powering using compiler<br>
+                        intrinsics. It performs [ A to the power of B (mod M) ] where A and M are 3070-bit unsigned 
+                        integers and B is a 320-bit unsigned integer in just 0.005 seconds thanks to compiler intrinsics.<br>
+                        It supports big unsigned integers only and the whole library is about 1500 lines of C code.
+                            
+                    &#9 An optimized function library of my own implementations of cryptographic algorithms
+                        like Argon2, Blake2b, ChaCha20 and Schnorr Signature generator / verifier. I implemented<br>
+                        them from their RFCs. The most complicated of these by far to implement has been Argon2id.
+                        The library is about 2000 lines of C code.
+                          
+                    &#9 A TCP Client which runs on the user's machine. It transports the user's long-term public key to
+                        the TCP server in an encrypted and authenticated fashion (in order to do the rest of the 
+                        communication session also in a secure fashion) by means of a short-term Diffie-Hellman handshake
+                        which creates a very short lived shared secret, which is destroyed as soon as the long-term public
+                        key is transported to the server. a HMAC authenticator is used here. Then, a new Diffie-Hellman 
+                        session-length shared secret is established using the server's and client's long-term keys.
+                        To send a text a message to everyone else in their chatroom, a 3-layer deep key scheme is used.
+                        First, a one-time use 32-byte key K is randomly generated. This key is itself encrypted by the
+                        user sender, and decrypted by the receivers of the message via 32-byte session-length symmetric keys
+                        KAB and KBA, which are extracted from the session-length shared secret, which itself comes from
+                        the 1st layer keys - the server's and client's long-term 3070-bit public key and 320-bit private key.
+                        The un-encrypted version of one-time use key K is used to encrypt the actual payload in the packet
+                        which is to be kept encrypted while in transit. Finally, a Schnorr Signature is calculated on the
+                        whole packet payload, attached to the packet payload and sent to the TCP server to be routed to
+                        all the intended client receivers, guaranteed message integrity and security. On text message arrival,
+                        the receiver clients use their long-term public keys to validate the cryptographic signature attached
+                        to the payload, to be assured that the message indeed legitimately comes from the expected sender
+                        and that it was not modified in transit. The receiver clients then use their receiver session key from
+                        the pair (KBA,KAB), extracted from the shared secret originating from the long-term public/private keys,
+                        to decrypt the one-time use key K. Then, the decrypted version of key K is used to decrypt the actual
+                        protected part of the payload and the text message itself. The TCP client alerts the desktop GUI system
+                        to display the message to the user's screen. The GUI is written in C++ using the wxWidgets toolkit.
+                        
+                    &#9 A TCP Server which maintains its own internal state of all the current users of the texting system
+                        and all the chatrooms that have been created. It never initiates communication with the TCP clients,
+                        rather only conveys transmissions to them, from sender clients. The TCP server is unable to decrypt
+                        the users' text messages. The client machines send, a few times per second per client, polling requests 
+                        to the TCP server, which internally saves messages to be delivered to each client. It keeps track of
+                        dead connections via a third thread, which periodically locks (using mutexes) the necessary memory
+                        regions in order to see the last time every client polled the server, and if it was over X seconds ago,
+                        assumes a dead connection and removes the user's machine from the texting system. It does other things
+                        too of course. It will all be described in the documentation.
+                        
+                
+                </span>
+                
+                           
+        
+        </div>
         
         
         
